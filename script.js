@@ -14,13 +14,12 @@ const addressWarn = document.getElementById("address-warn")
 let cart = [];
 
 
-// Abrir o modal do carrinho
+
 cartBtn.addEventListener("click", function () {
     updateCartModal();
     cartModal.style.display = "flex"
 })
 
-// fechar o modal quando clicar fora
 cartModal.addEventListener("click", function (event) {
     if (event.target === cartModal) {
         cartModal.style.display = "none"
@@ -44,7 +43,7 @@ menu.addEventListener("click", function (event) {
 })
 
 
-// funcão para adicionar ao carinho
+
 function addToCart(name, price) {
     const existingItem = cart.find(item => item.name === name)
 
@@ -63,7 +62,7 @@ function addToCart(name, price) {
 
 }
 
-// Atualiza o carrinho
+
 
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
@@ -104,7 +103,7 @@ function updateCartModal() {
 
 }
 
-// função para remover o item do carrinho
+
 cartItemsContainer.addEventListener("click", function (event){
 if(event.target.classList.contains("remove-from-cart-btn")) {
     const name = event.target.getAttribute("data-name")
@@ -157,7 +156,7 @@ Toastify({
         background: "#ef4444",
       },
     }).showToast();
-    
+
         return;
     }
 
@@ -168,7 +167,6 @@ Toastify({
         return;
     }
 
-    // Enviar o pedido para api whatsapp
     const cartItems = cart.map((item) => {
         return(
             ` ${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`
