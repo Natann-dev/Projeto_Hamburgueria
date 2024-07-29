@@ -175,7 +175,7 @@ Toastify({
 
 
     const message = encodeURIComponent(cartItems)
-    const phone = "83999218490"
+    const phone = "5583999218490"
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
 
